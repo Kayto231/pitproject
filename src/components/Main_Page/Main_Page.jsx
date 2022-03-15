@@ -7,6 +7,7 @@ import {
   removeFromCounter,
   resetCounter,
 } from "../../redux/action/actions";
+import { Coffee } from "../Coffee/Coffee";
 import Todo from "../Todo/Todo";
 
 const Main_Page = () => {
@@ -16,31 +17,8 @@ const Main_Page = () => {
   return (
     <div className="main__row">
       <div className="main__firstContainer">
-        <p>First</p>
-        <div className="counter">
-          <p>Counter</p>
-          <div className="btns">
-            <button onClick={() => dispatch(addToCounter(counter))}>Add</button>
-            <button onClick={() => dispatch(removeFromCounter(counter))}>
-              Decrease
-            </button>
-            <button onClick={() => dispatch(resetCounter())}>Reset</button>
-          </div>
-        </div>
-        <div className="input">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => dispatch(changeInput(e.target.value))}
-          />
-        </div>
-        <Todo />
-      </div>
-      <div className="center"></div>
-      <div className="main__secondContainer">
-        <p>Ваши данные</p>
-        <div className="counter">Current counter: {counter}</div>
-        <div className="input">{input}</div>
+        <img src="./images/logo3.jpg" alt="logo" />
+        <Coffee />
       </div>
     </div>
   );

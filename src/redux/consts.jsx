@@ -1,3 +1,4 @@
+// reducer.jsx
 export const ADD_COUNTER = "ADD_COUNTER";
 export const REMOVE_COUNTER = "REMOVE_COUNTER";
 export const RESET_COUNTER = "RESET_COUNTER";
@@ -15,3 +16,13 @@ export const IS_EDIT_STATE = "IS_EDIT_STATE";
 export const IS_EDITTING_ON = "IS_EDITTING_ON";
 export const CHANGE_EDIT_INPUT = "CHANGE_EDIT_INPUT";
 export const EDIT_IS_DONE = "EDIT_IS_DONE";
+
+//COFFEE_REDUCER.jsx
+export const SET_COFFEE_CATEGORY = "SET_COFFEE_CATEGORY";
+export const LOAD_BANNER = "LOAD_BANNER";
+export const CHANGE_OPEN_STATE = "CHANGE_OPEN_STATE";
+
+//cart_Reducer.jsx
+export const CHANGE_CART_STATE = "CHANGE_CART_STATE";
+export const ADD_ITEM_TO_CART = "ADD_ITEM_TO_CART";
+export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART";
