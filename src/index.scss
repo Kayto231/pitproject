@@ -652,6 +652,21 @@
     max-width: 100%;
     background-color: #ffffff;
 
+    .admin_Page_Header {
+      .admin_Item_Border {
+        max-width: 100%;
+        overflow: scroll;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        .admin_Item_Content {
+          max-width: fit-content;
+          margin-right: 10px;
+        }
+      }
+    }
+    .cart_column {
+      min-width: 100% !important;
+    }
     .main__row {
       display: flex;
       flex-direction: column;
@@ -672,6 +687,15 @@
           height: 40px;
           input {
             height: 20px;
+          }
+        }
+        .main__Coffee_Container {
+          .main_Banner_Container {
+            margin-top: 20px;
+            .main_Banner_Part {
+              margin-left: 20px;
+              margin-right: 20px;
+            }
           }
         }
         .container_column {
