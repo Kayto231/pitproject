@@ -1,7 +1,7 @@
 import "../../index.scss";
 
+import { Link } from "react-router-dom";
 import React from "react";
-import { Cart } from "../Cart/Cart";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCartStateAction } from "../../redux/action/cart_actions";
 
@@ -17,6 +17,12 @@ const Header = () => {
           <div className="nav_Bar">
             <ul>
               <li>
+                <Link to={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link to={"/order"}>Orders</Link>
+              </li>
+              <li>
                 <div className="btn">
                   {" "}
                   <button
@@ -28,18 +34,8 @@ const Header = () => {
                   </button>
                 </div>
               </li>
-              <li>
-                <a href="#">Menu</a>
-              </li>
-              <li>
-                <a href="#">Contacts</a>
-              </li>
             </ul>
-            <ul className="last__Ul">
-              <li>
-                <a href="#">Sign in</a>
-              </li>
-            </ul>
+            <ul className="last__Ul"></ul>
           </div>
         </div>
       </nav>

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCartStateAction } from "../../redux/action/cart_actions";
 import { CartItem } from "./CartItem";
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
   const dispatch = useDispatch();
   const { isCartOpened, cartItems } = useSelector((state) => state.cart);
+
   return (
     <div className="cart_column">
       <div className="header_column">
@@ -34,11 +36,28 @@ export const Cart = () => {
               );
             })
           ) : (
-            <div className="cart_Text_absent">Cart is absent</div>
+            <div className="cart_Text_absent">
+              <p>Cart is absent</p>
+              <Link to={"/"}>
+                {" "}
+                <button
+                  onClick={() => dispatch(changeCartStateAction(isCartOpened))}
+                >
+                  Do some oreders
+                </button>{" "}
+              </Link>
+            </div>
           )}
         </div>
         <div className="cart_Footer_Container">
-          <button>Make the order</button>
+          <Link to={"/order"}>
+            <button
+              onClick={() => dispatch(changeCartStateAction(isCartOpened))}
+              disabled={cartItems.length >= 1 ? false : true}
+            >
+              Make the order
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -2,11 +2,13 @@ import {
   ADD_ITEM_TO_CART,
   CHANGE_CART_STATE,
   REMOVE_ITEM_FROM_CART,
+  SEND_INFO_ABOUT_ORDER,
 } from "../consts";
 
 const initialState = {
   isCartOpened: false,
   cartItems: [],
+  orders: [],
 };
 
 export const cartCoffeeReducer = (state = initialState, action) => {
@@ -27,7 +29,11 @@ export const cartCoffeeReducer = (state = initialState, action) => {
         ...state,
         cartItems: action.payload,
       };
-
+    case SEND_INFO_ABOUT_ORDER:
+      return {
+        ...state,
+        orders: action.payload,
+      };
     default: {
       return {
         ...state,
