@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   ADD_ITEM_TO_CART,
   CHANGE_CART_STATE,
+  ORDER_IS_DONE,
   REMOVE_ITEM_FROM_CART,
   SEND_INFO_ABOUT_ORDER,
 } from "../consts";
@@ -23,6 +24,11 @@ export const onRemoveItemFromCartAction = (obj) => ({
 export const onSendingInfoAction = (array) => ({
   type: SEND_INFO_ABOUT_ORDER,
   payload: array,
+});
+
+export const orderIsDoneAction = () => ({
+  type: ORDER_IS_DONE,
+  payload: [],
 });
 
 export const onAddToCartFunction = (currentArray, obj) => {

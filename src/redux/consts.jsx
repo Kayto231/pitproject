@@ -27,6 +27,7 @@ export const CHANGE_CART_STATE = "CHANGE_CART_STATE";
 export const ADD_ITEM_TO_CART = "ADD_ITEM_TO_CART";
 export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART";
 export const SEND_INFO_ABOUT_ORDER = "SEND_INFO_ABOUT_ORDER";
+export const ORDER_IS_DONE = "ORDER_IS_DONE";
 
 //Admin_reducer.jsx
 export const CHANGE_ADMIN_STATE = "CHANGE_ADMIN_STATE";

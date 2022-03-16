@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../../index.scss";
-import { onSendingInfoFunction } from "../../redux/action/cart_actions";
+import {
+  onSendingInfoFunction,
+  orderIsDoneAction,
+} from "../../redux/action/cart_actions";
 import { Order_Item } from "./Order_Item";
 
 export const Order_Page = () => {
@@ -9,7 +12,25 @@ export const Order_Page = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [isOrderDone, setIsOrderDone] = useState(false);
 
+  const makeOrderFunction = () => {
+    dispatch(
+      onSendingInfoFunction({
+        name,
+        address,
+        items: cartItems,
+      })
+    );
+    setName("");
+    setAddress("");
+
+    setIsOrderDone(!isOrderDone);
+
+    setIsDisabled(!isDisabled);
+    dispatch(orderIsDoneAction());
+  };
   return (
     <div className="page_Border">
       <h2>Your order:</h2>
@@ -25,6 +46,8 @@ export const Order_Page = () => {
               price={el.price}
             />
           ))
+        ) : isOrderDone && cartItems.length <= 0 ? (
+          <div className="text_Nothing">Your order is completed</div>
         ) : (
           <div className="text_Nothing">Nothing is added</div>
         )}
@@ -55,15 +78,8 @@ export const Order_Page = () => {
             onChange={(e) => setAddress(e.target.value)}
           />
           <button
-            onClick={() =>
-              dispatch(
-                onSendingInfoFunction({
-                  name,
-                  address,
-                  items: cartItems,
-                })
-              )
-            }
+            disabled={isDisabled || cartItems.length <= 0 ? true : false}
+            onClick={() => makeOrderFunction()}
           >
             Send Order
           </button>

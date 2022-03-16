@@ -1,6 +1,7 @@
 import {
   ADD_ITEM_TO_CART,
   CHANGE_CART_STATE,
+  ORDER_IS_DONE,
   REMOVE_ITEM_FROM_CART,
   SEND_INFO_ABOUT_ORDER,
 } from "../consts";
@@ -33,6 +34,11 @@ export const cartCoffeeReducer = (state = initialState, action) => {
       return {
         ...state,
         orders: action.payload,
+      };
+    case ORDER_IS_DONE:
+      return {
+        ...state,
+        cartItems: action.payload,
       };
     default: {
       return {
