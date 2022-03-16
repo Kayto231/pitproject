@@ -7,7 +7,7 @@ import { changeCartStateAction } from "../../redux/action/cart_actions";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const { isCartOpened } = useSelector((state) => state.cart);
+  const { isCartOpened, cartItems } = useSelector((state) => state.cart);
 
   return (
     <div className="navBar__column">
@@ -32,10 +32,18 @@ const Header = () => {
                   >
                     Cart
                   </button>
+                  <div className="btn_Cart_Counter">
+                    {cartItems.length >= 1
+                      ? cartItems
+                          .filter((el) => +el.price)
+                          .map((el) => el.price)
+                          .reduce((prev, current) => (current += prev), 0) +
+                        " grn"
+                      : ""}
+                  </div>
                 </div>
               </li>
             </ul>
-            <ul className="last__Ul"></ul>
           </div>
         </div>
       </nav>

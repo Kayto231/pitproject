@@ -605,7 +605,13 @@
 
         .btn {
           border-bottom: 2px solid #ffffff;
-
+          position: relative;
+          .btn_Cart_Counter {
+            position: absolute;
+            top: 0px;
+            right: 30px;
+            color: red;
+          }
           button {
             height: fit-content;
             box-sizing: border-box;

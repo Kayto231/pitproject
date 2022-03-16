@@ -57,7 +57,8 @@ export const Order_Page = () => {
           Your total:{" "}
           {cartItems.length >= 1
             ? cartItems
-                .map((obj) => obj.price)
+                .filter((el) => +el.price)
+                .map((el) => el.price)
                 .reduce((prev, current) => (current += prev)) + ""
             : "0"}{" "}
           grn
