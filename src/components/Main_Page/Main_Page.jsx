@@ -17,7 +17,7 @@ const Main_Page = () => {
   return (
     <div className="main__row">
       <div className="main__firstContainer">
-        <img src="./images/logo3.jpg" alt="logo" />
+        <img src="./images/logo.png" alt="Logo" />
         <Coffee />
       </div>
     </div>

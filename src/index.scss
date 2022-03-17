@@ -15,6 +15,62 @@
   width: 100vw;
   background-color: #606651;
 
+  //Login_Page
+  .login_Page_Border {
+    width: 100%;
+    max-width: 800px;
+    min-width: 375px;
+    border: 2px solid #b4ff33;
+    margin: 20px auto;
+    border-radius: 15px;
+    min-height: 600px;
+    max-height: fit-content;
+    background-color: #333333;
+    .login_From_Auth {
+      display: flex;
+      flex-direction: column;
+      min-width: 250px;
+      width: fit-content;
+      margin: 25% auto;
+      .login_Page_Error {
+        position: absolute;
+        top: 30%;
+        display: flex;
+        color: red;
+        font-size: 18px;
+        margin: 0 auto 10px;
+      }
+
+      h2 {
+        color: #ffffff;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      input {
+        padding: 4px;
+        margin-bottom: 20px;
+        border: 2px solid #b4ff33;
+        outline: none;
+        border-radius: 15px;
+        height: 20px;
+        color: #333333;
+        font-weight: bold;
+      }
+      button {
+        margin: 0 auto;
+        border-radius: 35px;
+        width: 200px;
+        height: 40px;
+        border: 1px solid #b4ff33;
+        background-color: #333333;
+        color: #ffffff;
+        &:hover {
+          background: darken(#333333, 5%);
+        }
+      }
+    }
+  }
+
   //Admin_Page
   .admin_Page_Column {
     width: 80%;
@@ -344,6 +400,7 @@
     img {
       height: 170px;
       width: 170px;
+      margin-bottom: 20px;
     }
 
     .main__Coffee_Container {
@@ -581,6 +638,7 @@
     justify-content: flex-end;
     background-color: #333333;
     border-bottom: 3px solid #b4ff33;
+
     .nav_justify {
       display: flex;
       justify-content: space-between;
@@ -589,24 +647,41 @@
       img {
         margin-left: 20px;
         width: 70px;
-        height: 55px;
+        height: 70px;
       }
       .nav_Bar {
         display: flex;
-      }
-    }
-    ul {
-      display: flex;
-      list-style-type: none;
-      li {
-        margin-right: 20px;
-        padding: 20px;
-        transition: all 0.25s ease-in-out;
-
         .btn {
           border-bottom: 2px solid #ffffff;
           position: relative;
+          top: -1.5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 24px;
+            height: 17px;
+            margin: 0 auto;
+            margin-right: 5px;
+          }
+        }
+      }
+      ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0 auto;
+
+        li {
+          margin: 0 auto;
+          // margin-right: 20px;
+          padding: 20px;
+          transition: all 0.25s ease-in-out;
+          height: 10px;
+
           .btn_Cart_Counter {
+            margin: 0 auto;
+
             position: absolute;
             top: 0px;
             right: 30px;
@@ -633,9 +708,7 @@
             border-bottom: 2px solid #b4ff33;
           }
         }
-        &:hover {
-          transform: translateY(+2px);
-        }
+
         a {
           border-bottom: 2px solid #ffffff;
           text-decoration: none;
@@ -657,7 +730,34 @@
 @media screen and (max-width: 801px) {
   .App {
     max-width: 100%;
-    background-color: #ffffff;
+    background-color: #606651;
+
+    .navBar__column {
+      .nav_justify {
+        img {
+          width: fit-content;
+        }
+      }
+      .nav_Bar {
+        ul {
+          width: 270px;
+          flex-flow: row wrap;
+          margin: 15px auto;
+          li {
+            width: fit-content;
+            padding: 10px;
+          }
+        }
+      }
+    }
+
+    .login_Page_Border {
+      .login_From_Auth {
+        .login_Page_Error {
+          top: 20%;
+        }
+      }
+    }
 
     .admin_Page_Header {
       .admin_Item_Border {
@@ -673,6 +773,7 @@
     }
     .cart_column {
       min-width: 100% !important;
+      top: 10%;
     }
     .main__row {
       display: flex;
@@ -683,25 +784,23 @@
         width: 80%;
         height: 100%;
         margin: 0 auto;
-        .counter {
-          .btns {
-            button {
-              height: 40px;
-            }
-          }
-        }
-        .input {
-          height: 40px;
-          input {
-            height: 20px;
-          }
-        }
+
         .main__Coffee_Container {
+          align-content: flex-start;
           .main_Banner_Container {
             margin-top: 20px;
             .main_Banner_Part {
               margin-left: 20px;
               margin-right: 20px;
+              .main_Position_Coffee {
+                height: 100%;
+                .header_Position_Coffee {
+                  height: 280px;
+                  .span_text {
+                    height: 100px;
+                  }
+                }
+              }
             }
           }
         }

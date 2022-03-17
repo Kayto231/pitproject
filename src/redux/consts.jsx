@@ -32,3 +32,8 @@ export const ORDER_IS_DONE = "ORDER_IS_DONE";
 //Admin_reducer.jsx
 export const CHANGE_ADMIN_STATE = "CHANGE_ADMIN_STATE";
 export const GET_ADMIN_ORDERS = "GET_ADMIN_ORDERS";
+
+//Login_reducer.jsx
+export const LOGED_IN_STATE = "LOGED_IN_STATE";
+export const ERROR_WHILE_LOGGING = "ERROR_WHILE_LOGGING";
+export const LOAD_ALL_USERS = "LOAD_ALL_USERS";

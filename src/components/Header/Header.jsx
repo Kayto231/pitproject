@@ -8,30 +8,40 @@ import { changeCartStateAction } from "../../redux/action/cart_actions";
 const Header = () => {
   const dispatch = useDispatch();
   const { isCartOpened, cartItems } = useSelector((state) => state.cart);
+  const { isLogedIn } = useSelector((state) => state.login);
 
   return (
     <div className="navBar__column">
       <nav>
         <div className="nav_justify">
-          <img src="./images/logo3.jpg" alt="" />
+          <img src="./images/logo.png" alt="Logo" />
           <div className="nav_Bar">
             <ul>
               <li>
                 <Link to={"/"}>Home</Link>
               </li>
+              {isLogedIn ? (
+                <li>
+                  <Link to={"/profile"}>Profile</Link>
+                </li>
+              ) : (
+                <li>
+                  <Link to={"/login"}>Sign in</Link>
+                </li>
+              )}
+
               <li>
                 <Link to={"/order"}>Orders</Link>
               </li>
               <li>
                 <div className="btn">
-                  {" "}
-                  <button
+                  <img
+                    src="./images/cart.svg"
+                    alt="cart"
                     onClick={() =>
                       dispatch(changeCartStateAction(isCartOpened))
                     }
-                  >
-                    Cart
-                  </button>
+                  />
                   <div className="btn_Cart_Counter">
                     {cartItems.length >= 1
                       ? cartItems

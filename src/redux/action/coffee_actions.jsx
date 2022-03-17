@@ -18,7 +18,6 @@ export const getCoffeeCategoiesList = () => {
     const response = await axios.get(
       "https://6153b0673f4c4300171593fc.mockapi.io/posts"
     );
-    console.log(response.data);
     dispatch(
       getCoffeCategories(response.data.length >= 1 ? response.data : [])
     );
