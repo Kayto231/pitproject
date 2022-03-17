@@ -15,6 +15,23 @@ export const loadAllUsersAction = (e) => ({
   payload: e,
 });
 
+export const checkIsAuthFunction = () => {
+  return (dispatch) => {
+    let isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
+    let isLogedIn = JSON.parse(localStorage.getItem("isLogedIn"));
+    let user = localStorage.getItem("user");
+    console.log(isAdmin);
+    // console.log(isAdmin, isLogedIn, user);
+
+    dispatch(
+      isLogedInAction({
+        isLogedIn,
+        user,
+        isAdmin,
+      })
+    );
+  };
+};
 export const isLogedInFunction = (obj) => {
   return async (dispatch) => {
     return new Promise((resolve, reject) => {
@@ -25,8 +42,6 @@ export const isLogedInFunction = (obj) => {
 
         const [isAdmin] = isAuthorized.map((el) => el.isAdmin);
 
-        localStorage.setItem("isAdmin", isAdmin);
-
         if (isAuthorized.length > 0) {
           dispatch(throwErrorFunction(false, ""));
           dispatch(
@@ -36,6 +51,11 @@ export const isLogedInFunction = (obj) => {
               isAdmin: isAdmin,
             })
           );
+          console.log(isAdmin);
+          localStorage.setItem("isAdmin", isAdmin);
+          localStorage.setItem("isLogedIn", "true");
+          localStorage.setItem("user", obj.login);
+
           return resolve(true);
         } else {
           dispatch(throwErrorFunction(true, "Incorrect Login or Password"));

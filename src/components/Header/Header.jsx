@@ -28,15 +28,18 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      onClick={() =>
+                      onClick={() => {
                         dispatch(
                           isLogedInAction({
                             isLogedIn: false,
                             user: "",
                             isAdmin: false,
                           })
-                        )
-                      }
+                        );
+                        localStorage.removeItem("isAdmin");
+                        localStorage.removeItem("user");
+                        localStorage.removeItem("isLogedIn");
+                      }}
                       to={"/"}
                     >
                       Sign out

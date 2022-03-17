@@ -12,7 +12,7 @@ export const Profile = () => {
           <span>Name: {user}</span>
           <span>Admin: {isAdmin ? "Yes" : "No"}</span>
         </div>
-        {isAdmin ? (
+        {isAdmin === true ? (
           <div className="profile_Page_Admin">
             <div className="nav_To_Admin">
               <Link to={"/admin"}>Admin</Link>

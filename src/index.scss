@@ -136,7 +136,9 @@ html {
     border-radius: 15px;
     background-color: #333333;
     .admin_Page_Header {
-      width: 80%;
+      // width: 80%;
+      justify-content: center;
+      align-items: center;
       display: flex;
       flex-direction: column;
       margin: 60px auto;
@@ -788,6 +790,10 @@ html {
     max-width: 100%;
     background-color: #606651;
 
+    .profile_Page_Border {
+      width: 80%;
+      min-width: 330px;
+    }
     .page_Border {
       width: 300px;
     }
@@ -828,6 +834,7 @@ html {
     }
 
     .admin_Page_Header {
+      max-width: 70%;
       .admin_Item_Border {
         max-width: 100%;
         overflow: scroll;

@@ -11,7 +11,10 @@ import { Order_Page } from "./components/Order_Page.jsx/Order_Page";
 import { Admin_Page } from "./components/Admin_Page/Admin_Page";
 import { Login_Page } from "./components/Login_Page/Login_Page";
 import { useEffect } from "react";
-import { loadAllUsersFunction } from "./redux/action/login_actions";
+import {
+  checkIsAuthFunction,
+  loadAllUsersFunction,
+} from "./redux/action/login_actions";
 import { Profile } from "./components/Profile/Profile";
 
 function App() {
@@ -22,7 +25,9 @@ function App() {
 
   useEffect(() => {
     dispatch(loadAllUsersFunction());
+    dispatch(checkIsAuthFunction());
   }, []);
+
   return (
     <BrowserRouter>
       <div className="App">

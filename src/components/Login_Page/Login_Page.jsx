@@ -49,7 +49,6 @@ export const Login_Page = () => {
 
             setLogin("");
             setPass("");
-            console.log(response);
             if (response === true) navigate("/");
           }}
         >
