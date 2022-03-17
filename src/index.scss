@@ -749,6 +749,11 @@
           li {
             width: fit-content;
             padding: 10px;
+            .btn {
+              .btn_Cart_Counter {
+                left: -240px;
+              }
+            }
           }
         }
       }
