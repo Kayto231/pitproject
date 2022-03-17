@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export const Profile = () => {
   const { user, isAdmin } = useSelector((state) => state.login);
-  console.log(user, isAdmin);
   return (
     <div className="profile_Page_Border">
       <div className="profile_Page_Info">
