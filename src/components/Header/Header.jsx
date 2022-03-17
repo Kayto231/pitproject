@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCartStateAction } from "../../redux/action/cart_actions";
+import { isLogedInAction } from "../../redux/action/login_actions";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -21,9 +22,27 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               {isLogedIn ? (
-                <li>
-                  <Link to={"/profile"}>Profile</Link>
-                </li>
+                <>
+                  <li>
+                    <Link to={"/profile"}>Profile</Link>
+                  </li>
+                  <li>
+                    <Link
+                      onClick={() =>
+                        dispatch(
+                          isLogedInAction({
+                            isLogedIn: false,
+                            user: "",
+                            isAdmin: false,
+                          })
+                        )
+                      }
+                      to={"/"}
+                    >
+                      Sign out
+                    </Link>
+                  </li>
+                </>
               ) : (
                 <li>
                   <Link to={"/login"}>Sign in</Link>

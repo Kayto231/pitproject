@@ -8,6 +8,10 @@
   font-family: "Hubballi", cursive;
 }
 
+html {
+  min-height: fit-content;
+  height: 100%;
+}
 //App.jsx file
 .App {
   min-height: 100vh;
@@ -15,8 +19,60 @@
   width: 100vw;
   background-color: #606651;
 
+  //Profile
+  .profile_Page_Border {
+    width: 100%;
+    max-width: 800px;
+    min-width: 375px;
+    border: 2px solid #b4ff33;
+    margin: 20px auto;
+    border-radius: 15px;
+    min-height: 600px;
+    max-height: fit-content;
+    background-color: #333333;
+
+    .profile_Page_Info {
+      display: flex;
+      margin: 100px auto;
+      padding: 10px;
+      .profile_Page_Admin {
+        border: 2px solid #b4ff33;
+        width: 50px;
+        border-radius: 15px;
+        min-height: fit-content;
+        height: 20px;
+        .nav_To_Admin {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          a {
+            color: #ffffff;
+            text-decoration: none;
+          }
+        }
+      }
+      .profile_Page_Name {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        color: #ffffff;
+        font-size: 20px;
+      }
+    }
+  }
   //Login_Page
   .login_Page_Border {
+    width: 100%;
+    max-width: 800px;
+    min-width: 375px;
+    border: 2px solid #b4ff33;
+    margin: 20px auto;
+    border-radius: 15px;
+    min-height: 600px;
+    max-height: fit-content;
+    background-color: #333333;
     width: 100%;
     max-width: 800px;
     min-width: 375px;
