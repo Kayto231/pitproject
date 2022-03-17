@@ -752,7 +752,11 @@
     }
 
     .login_Page_Border {
+      min-width: 300px;
+      max-width: 300px;
       .login_From_Auth {
+        width: 200px;
+        margin: 100px auto;
         .login_Page_Error {
           top: 20%;
         }
