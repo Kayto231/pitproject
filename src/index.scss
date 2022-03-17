@@ -735,12 +735,12 @@
     .navBar__column {
       .nav_justify {
         img {
-          width: fit-content;
+          width: 40px;
         }
       }
       .nav_Bar {
         ul {
-          width: 270px;
+          width: fit-content;
           flex-flow: row wrap;
           margin: 15px auto;
           li {
